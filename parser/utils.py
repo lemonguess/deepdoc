@@ -14,7 +14,7 @@
 #  limitations under the License.
 #
 
-from rag.nlp import find_codec
+from doctools import find_codec
 
 
 def get_text(fnm: str, binary=None) -> str:

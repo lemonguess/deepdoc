@@ -21,8 +21,8 @@ from collections import Counter
 import numpy as np
 from huggingface_hub import snapshot_download
 
-from api.utils.file_utils import get_project_base_directory
-from rag.nlp import rag_tokenizer
+from doctools.general import get_project_base_directory
+from doctools import rag_tokenizer
 from .recognizer import Recognizer
 
 

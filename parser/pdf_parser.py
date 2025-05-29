@@ -13,7 +13,10 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 #
-
+from doctools.general import get_project_base_directory, vision_llm_describe_prompt
+from vision import OCR, LayoutRecognizer, Recognizer, TableStructureRecognizer
+from doctools import vision_llm_chunk as picture_vision_llm_chunk
+from doctools import rag_tokenizer
 import logging
 import os
 import random
@@ -23,7 +26,6 @@ import threading
 from copy import deepcopy
 from io import BytesIO
 from timeit import default_timer as timer
-
 import numpy as np
 import pdfplumber
 import trio
@@ -31,13 +33,7 @@ import xgboost as xgb
 from huggingface_hub import snapshot_download
 from PIL import Image
 from pypdf import PdfReader as pdf2_read
-from utils.generalUtil import get_project_base_directory
-from deepdoc.vision import OCR, LayoutRecognizer, Recognizer, TableStructureRecognizer
-from rag.app.picture import vision_llm_chunk as picture_vision_llm_chunk
-from rag.nlp import rag_tokenizer
-from rag.prompts import vision_llm_describe_prompt
-from rag.settings import PARALLEL_DEVICES
-
+PARALLEL_DEVICES = None
 LOCK_KEY_pdfplumber = "global_shared_lock_pdfplumber"
 if LOCK_KEY_pdfplumber not in sys.modules:
     sys.modules[LOCK_KEY_pdfplumber] = threading.Lock()
