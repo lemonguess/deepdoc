@@ -7,6 +7,13 @@ def num_tokens_from_string(string: str) -> int:
         return len(encoder.encode(string))
     except Exception:
         return 0
+
+def traversal_files(base):
+    for root, ds, fs in os.walk(base):
+        for f in fs:
+            fullname = os.path.join(root, f)
+            yield fullname
+
 def get_project_base_directory(*args):
     PROJECT_BASE = os.path.abspath(
             os.path.join(

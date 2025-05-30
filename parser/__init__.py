@@ -20,8 +20,9 @@ from .excel_parser import RAGFlowExcelParser as ExcelParser
 from .ppt_parser import RAGFlowPptParser as PptParser
 from .html_parser import RAGFlowHtmlParser as HtmlParser
 from .json_parser import RAGFlowJsonParser as JsonParser
-from .markdown_parser import RAGFlowMarkdownParser as MarkdownParser
+from .figure_parser import VisionFigureParser as FigureParser
 from .txt_parser import RAGFlowTxtParser as TxtParser
+from .markdown_parser import RAGFlowMarkdownParser as MarkdownParser
 
 __all__ = [
     "PdfParser",
@@ -31,6 +32,7 @@ __all__ = [
     "PptParser",
     "HtmlParser",
     "JsonParser",
-    "MarkdownParser",
+    "FigureParser",
     "TxtParser",
+    "MarkdownParser"
 ]

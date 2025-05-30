@@ -61,7 +61,8 @@ class RagTokenizer:
     def __init__(self, debug=False):
         self.DEBUG = debug
         self.DENOMINATOR = 1000000
-        self.DIR_ = os.path.join(get_project_base_directory(), "rag/res", "huqie")
+        self.DIR_ = os.path.join(get_project_base_directory(), "huqie")
+        # self.DIR_ = os.path.join(get_project_base_directory(), "rag/res", "huqie")
 
         self.stemmer = PorterStemmer()
         self.lemmatizer = WordNetLemmatizer()

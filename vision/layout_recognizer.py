@@ -58,7 +58,7 @@ class LayoutRecognizer(Recognizer):
         self.garbage_layouts = ["footer", "header", "reference"]
         self.client = None
         if os.environ.get("TENSORRT_DLA_SVR"):
-            from deepdoc.vision.dla_cli import DLAClient
+            from vision.dla_cli import DLAClient
             self.client = DLAClient(os.environ["TENSORRT_DLA_SVR"])
 
     def __call__(self, image_list, ocr_res, scale_factor=3, thr=0.2, batch_size=16, drop=True):

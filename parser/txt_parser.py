@@ -17,7 +17,7 @@
 import re
 
 from parser.utils import get_text
-from rag.nlp import num_tokens_from_string
+from doctools.general import num_tokens_from_string
 
 
 class RAGFlowTxtParser:
